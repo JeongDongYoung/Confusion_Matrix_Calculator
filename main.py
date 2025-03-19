@@ -41,6 +41,15 @@ def main():
     results = evaluate_model(csv_file, category_name, prediction_column, truth_column)
     
     print_results(results)
-        
+
+    while True:
+        another = input("\nEvaluate other category? (y/n): ").lower()
+        if another == 'y':
+            category_name = input("Category: ")
+            results = evaluate_model(csv_file, category_name, prediction_column, truth_column)
+            print_results(results)
+        else:
+            break
+            
 if __name__ == "__main__":
     main()
